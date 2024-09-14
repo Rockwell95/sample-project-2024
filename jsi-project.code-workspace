@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "JSI_PROJECT",
+			"path": "./"
+		},
+		{
+			"name": "Sample API",
+			"path": "./packages/sample-api"
+		},
+		{
+			"name": "Sample Service Backend",
+			"path": "./packages/sample-service-backend"
+		},
+		{
+			"name": "Sample Service GUI",
+			"path": "./packages/sample-service-ui"
+		},
+	]
+}
