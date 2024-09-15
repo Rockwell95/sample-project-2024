@@ -58,7 +58,8 @@ export const updateBook = async (bookId: number, bookBody: { [key: string]: any 
         data: {
             title: bookBody.title,
             published: bookBody.published ? new Date(bookBody.published) : undefined,
-            author: bookBody.author
+            author: bookBody.author,
+            summary: bookBody.summary
         }
     })
 }
