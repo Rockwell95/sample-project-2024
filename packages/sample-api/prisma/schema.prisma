@@ -18,16 +18,8 @@ model Book {
   published DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
-  content   String?
-  author    Author   @relation(fields: [authorId], references: [id])
-  authorId  Int
-}
-
-model Author {
-  id          Int      @id @default(autoincrement())
-  dateOfBirth DateTime
-  name        String?
-  books       Book[]
+  summary   String?
+  author    String
 }
 
 model User {

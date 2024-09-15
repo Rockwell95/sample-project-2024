@@ -9,6 +9,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6",
+    "@types/bcrypt": "^5.0.2",
     "lerna": "^8.1.8",
     "nodemon": "^3.1.4",
     "rollup": "^4.21.2",
@@ -30,6 +31,8 @@
     "build:sample-service-ui": "lerna run build --scope=sample-service-ui"
   },
   "dependencies": {
-    "axios": "^1.7.7"
+    "@types/uuid": "^10.0.0",
+    "axios": "^1.7.7",
+    "uuid": "^10.0.0"
   }
 }
