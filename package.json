@@ -19,7 +19,7 @@
     "vitest": "^2.0.5"
   },
   "scripts": {
-    "docker:build": "TODO",
+    "docker:build": "docker build . -t sample-project:latest",
     "docker:start": "docker compose up -d",
     "docker:stop": "docker compose down",
     "build": "lerna run build",

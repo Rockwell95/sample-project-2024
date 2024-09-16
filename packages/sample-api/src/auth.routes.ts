@@ -3,7 +3,7 @@ import { addRefreshTokenToWhitelist, deleteRefreshToken, findRefreshTokenById, r
 import { generateTokens } from "./jwt";
 import { findUserByEmail, createUserByEmailAndPassword, findUserById } from "./user.services";
 import { v4 as uuidv4 } from "uuid"
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt, { JwtPayload } from "jsonwebtoken"
 import { hashToken } from "./hashToken";
 

@@ -1,7 +1,9 @@
-version: '3.9'
 services:
   postgres:
     image: postgres:latest
+    hostname: postgres
+    networks:
+      - sample-project-network
     restart: always
     ports:
       - 5432:5432
@@ -12,3 +14,21 @@ services:
     volumes:
       - ./db/init/:/docker-entrypoint-initdb.d/
       - ./db/data:/var/lib/postgresql/datas:rw
+
+  sample-api:
+    image: sample-project:latest
+    networks:
+      - sample-project-network
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    environment:
+      DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/book_database?schema=public"
+      JWT_ACCESS_SECRET: SECRET123
+      JWT_REFRESH_SECRET: ANOTHER_SECRET123
+    command: node /app/sample-api/index.mjs
+    depends_on:
+      - postgres
+
+networks:
+  sample-project-network:
