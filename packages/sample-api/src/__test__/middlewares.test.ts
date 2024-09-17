@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import { isAuthenticated } from '../middlewares'; // Assuming the original code is in this file
+import { isAuthenticated } from '../middlewares';
 import { NextFunction, Response } from 'express';
 import { RequestWithPayload } from '../types';
 

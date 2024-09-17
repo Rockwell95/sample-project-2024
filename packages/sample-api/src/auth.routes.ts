@@ -9,6 +9,7 @@ import { hashToken } from "./hashToken";
 
 export const authRouter = express.Router();
 
+// TODO: A lot of business logic in these routes. Should be moved into testable functions
 authRouter.post('/register', async (req, res, next) => {
     try {
         const { email, password } = req.body;
