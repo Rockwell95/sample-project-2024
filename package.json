@@ -32,7 +32,9 @@
     "build:sample-service-backend": "lerna run build --scope=sample-service-backend",
     "build:sample-service-ui": "lerna run build --scope=sample-service-ui",
     "test:sample-api": "lerna run test --scope=sample-api",
-    "test:sample-api:ui": "lerna run test:ui --scope=sample-api"
+    "test:sample-service-backend": "lerna run test --scope=sample-service-backend",
+    "test:sample-api:ui": "lerna run test:ui --scope=sample-api",
+    "test:sample-service-backend:ui": "lerna run test:ui --scope=sample-service-backend"
   },
   "dependencies": {
     "@types/uuid": "^10.0.0",
