@@ -10,8 +10,7 @@ export class WSServer {
 
     this._server.on("connection", (ws) => {
       ws.on("message", (message) => {
-        console.warn("Received message. Not supported!");
-        ws.send("SENDING MESSAGES IS NOT SUPPORTED");
+        console.warn("Received message. Not supported:", message);
       });
     });
   }
