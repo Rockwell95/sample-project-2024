@@ -30,6 +30,24 @@ services:
     depends_on:
       - postgres
 
+  sample-service-backend:
+    image: sample-project:latest
+    networks:
+      - sample-project-network
+    restart: unless-stopped
+    ports:
+      - 4000:4000
+    command: node /app/sample-service-backend/index.mjs
+
+  sample-service-ui:
+    image: sample-project:latest
+    networks:
+      - sample-project-network
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    command: http-server /app/sample-service-ui -p 8080
+
 networks:
   sample-project-network:
 
