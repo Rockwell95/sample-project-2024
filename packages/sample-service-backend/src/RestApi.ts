@@ -2,6 +2,7 @@ import express, { Express } from "express";
 import { WSServer } from "./WebSocketServer.js";
 import _ from "lodash";
 import bodyParser from "body-parser";
+import cors from "cors";
 
 const DELAY = 30000; // 30 Seconds
 
@@ -14,6 +15,7 @@ export class RestApi {
   constructor(wsServer: WSServer) {
     this._wsServer = wsServer;
     this._app = express();
+    this._app.use(cors({ origin: true }));
     this._app.use(bodyParser.raw({ type: "*/*" }));
 
     this._app.get("/", (req, res) => {
@@ -25,7 +27,7 @@ export class RestApi {
 
       if (!isNaN(number)) {
         this._addToTotal(number);
-        res.status(200).send(this._total);
+        res.status(200).send(`${this._total}`);
       } else {
         res.sendStatus(400);
       }
