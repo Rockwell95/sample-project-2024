@@ -43,7 +43,6 @@ services:
     image: sample-project:latest
     networks:
       - sample-project-network
-    restart: unless-stopped
     ports:
       - 8080:8080
     command: http-server /app/sample-service-ui -p 8080

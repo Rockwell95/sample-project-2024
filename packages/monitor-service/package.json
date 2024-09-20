@@ -1,0 +1,24 @@
+{
+    "name": "monitor-service",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "build": "npx rollup -c ./rollup.config.mjs",
+        "start": "nodemon ./src/index.ts",
+        "test": "vitest",
+        "test:ui": "vitest --ui"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/node": "^22.5.4",
+        "@vitest/ui": "^2.1.1",
+        "prisma": "^5.19.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.2"
+    },
+    "dependencies": {}
+}

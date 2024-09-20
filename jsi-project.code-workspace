@@ -16,5 +16,9 @@
 			"name": "Sample Service GUI",
 			"path": "./packages/sample-service-ui"
 		},
+		{
+			"name": "Monitor Service",
+			"path": "./packages/monitor-service"
+		},
 	]
 }
