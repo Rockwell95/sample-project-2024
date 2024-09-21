@@ -68,7 +68,7 @@ const recursiveAsyncReadLine = (rl: Interface) => {
 const stopBackend = () => {
   try {
     const stopCommand = execSync(
-      "docker stop jsi-project-sample-service-backend-1"
+      "docker stop sample-project-2024-sample-service-backend-1"
     );
     console.log("Stopped service successfully!", stopCommand.toString());
   } catch (error: any) {
@@ -83,7 +83,7 @@ const stopBackend = () => {
 const startBackend = () => {
   try {
     const stopCommand = execSync(
-      "docker restart jsi-project-sample-service-backend-1"
+      "docker restart sample-project-2024-sample-service-backend-1"
     );
     console.log("Started service successfully!", stopCommand.toString());
   } catch (error: any) {

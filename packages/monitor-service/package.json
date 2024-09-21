@@ -6,7 +6,7 @@
     "scripts": {
         "build": "npx rollup -c ./rollup.config.mjs",
         "start": "nodemon ./src/index.ts",
-        "test": "vitest",
+        "test": "vitest run",
         "test:ui": "vitest --ui"
     },
     "keywords": [],

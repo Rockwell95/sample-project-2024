@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "d10e342a-f749-4727-bd9f-8d0cb1891b5e",
+		"name": "Sample API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1954908"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"bob@bob.com\",\n    \"password\": \"bob\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"bob@bob.com\",\n    \"password\": \"bob\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FhZGJmMS0yNjczLTRlYzItODY1Yy02NTBkNmU4MDBkMmEiLCJqdGkiOiJiZmM3Mzc2Ny1mNWE3LTRjMTAtYTA5ZS1kNjc4ZTU4M2I1MGMiLCJpYXQiOjE3MjY4ODEyNDMsImV4cCI6MTcyNjkxMDA0M30.qfgJJIqVdOkpO7SO4r4OgbAj-ytZheXtsiiAL-US-_w\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/auth/refreshToken",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"refreshToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FhZGJmMS0yNjczLTRlYzItODY1Yy02NTBkNmU4MDBkMmEiLCJpYXQiOjE3MjY4ODEyNDMsImV4cCI6MTcyNjg4MTU0M30.x_EfEyIG0PFq-2SVQ8lLxe4rRZOxgp41VjErv7yv7Mo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/books",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Book by ID",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FhZGJmMS0yNjczLTRlYzItODY1Yy02NTBkNmU4MDBkMmEiLCJpYXQiOjE3MjY4ODEyNDMsImV4cCI6MTcyNjg4MTU0M30.x_EfEyIG0PFq-2SVQ8lLxe4rRZOxgp41VjErv7yv7Mo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FhZGJmMS0yNjczLTRlYzItODY1Yy02NTBkNmU4MDBkMmEiLCJpYXQiOjE3MjY4ODEyNDMsImV4cCI6MTcyNjg4MTU0M30.x_EfEyIG0PFq-2SVQ8lLxe4rRZOxgp41VjErv7yv7Mo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"The Stand\",\n    \"author\": \"Stephen King\",\n    \"published\": \"1978-10-03\",\n    \"summary\": \"One man escapes from a biological weapon facility after an accident, carrying with him the deadly virus known as Captain Tripps, a rapidly mutating flu that - in the ensuing weeks - wipes out most of the world's population. In the aftermath, survivors choose between following an elderly black woman to Boulder or the dark man, Randall Flagg, who has set up his command post in Las Vegas. The two factions prepare for a confrontation between the forces of good and evil.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/book",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Book",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiN2FhZGJmMS0yNjczLTRlYzItODY1Yy02NTBkNmU4MDBkMmEiLCJpYXQiOjE3MjY4ODE3NzgsImV4cCI6MTcyNjg4MjA3OH0.US83N-ggwt2bYddS8xisw88KrYDNQnDfWvbRJHOIa1Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author\": \"Stephen E. King\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/book/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"book",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
