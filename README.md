@@ -11,6 +11,7 @@ The following utilities are recommended but not required:
 
 1. Chromium or alternative browser
 2. Postman
+   1. Use the included `Sample API.postman_collection.json` file to interact with the Sample API
 
 ## Getting Started
 
@@ -57,11 +58,127 @@ The following utilities are recommended but not required:
 
 ### Authenticating
 
-TODO
+NOTE: All Sample API endpoints can be found in `Sample API.postman_collection.json` at the root of this repo.
+
+#### Registering a User
+
+1. Make a `POST` request to http://localhost:3000/auth/register with the following body:
+
+```json
+{
+  "email": "<new user email address>",
+  "password": "<password>"
+}
+```
+
+### Logging In
+
+1. Make a `POST` request to http://localhost:3000/auth/login with the following body:
+
+```json
+{
+  "email": "<existing user email address>",
+  "password": "<password>"
+}
+```
+
+2. A response similar to the following will be received:
+
+```json
+{
+  "accessToken": "<jwt access token>",
+  "refreshToken": "<jwt refresh token>"
+}
+```
+
+3. Copy the value of `accessToken` into the Authorization header of any requests made to the server as a Bearer token:
+   1. `Authorization: Bearer <jwt access token>`
+4. NOTE: JWT tokens remain valid for only 5 minutes, while the refresh token lasts 8 hours. To refresh the authentication without requiring a new login, Make a `POST` request to http://localhost:3000/auth/refreshToken with the following body (using the `refreshToken` from step 2:
+
+```json
+{
+  "refreshToken": "<jwt refresh token>"
+}
+```
+
+5. A new access and refresh token will be provided in response in the same format as step 2. To continue making requests, use the newly provided access token from this response. To refresh the login again, use the newly provided refresh token from this response.
 
 ### CRUD Operations
 
-TODO
+NOTE: All CRUD operations require Bearer Token authentication, and must be provided as `Content-Type: application/json`
+
+#### `GET /books`
+
+- Gets all books in the database
+- Response Format:
+
+```ts
+{
+  id: number;
+  published: Date;
+  updatedAt: Date; // Date of last update
+  title: string;
+  summary: string | null; //Optional field, may be null
+  author: string;
+}
+[];
+```
+
+#### `POST /book`
+
+- Adds a new book to the database
+- Request format:
+
+```ts
+{
+   id: number;
+   published: Date;
+   title: string;
+   summary?: string //Optional field
+   author: string;
+}
+```
+
+- Responses:
+  - `201 Created`
+  - `400 Bad Request`
+
+#### `PUT /book/<bookId>`
+
+- Update an existing book in the database
+- Request Format:
+
+```ts
+// All fields are optional
+{
+   id: number?;
+   published?: Date;
+   title?: string;
+   summary?: string
+   author?: string;
+}
+```
+
+- Responses:
+  - `200 OK`
+
+#### `GET /book/<bookId>`
+
+- Get a book by its ID in the database:
+
+- Responses:
+  - `404 Not Found`
+  - `200 OK`
+  ```ts
+  {
+    id: number;
+    published: Date;
+    updatedAt: Date; // Date of last update
+    title: string;
+    summary: string | null; //Optional field, may be null
+    author: string;
+  }
+  ```
 
 ## Using the Sample Service
 
